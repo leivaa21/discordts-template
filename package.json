@@ -1,0 +1,24 @@
+{
+  "name": "discordts-template",
+  "version": "1.0.0",
+  "description": "A discord bot template for typescript, start building as soon as possible!",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.0"
+  },
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "fs": "^0.0.1-security",
+    "pm2": "^5.1.2"
+  }
+}
