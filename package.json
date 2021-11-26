@@ -4,14 +4,30 @@
   "description": "A discord bot template for typescript, start building as soon as possible!",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "tsc src/",
+    "start": "pm2 start src/index.js --name $npm_package_config_daemon",
+    "poststart": "npm run save",
+    "restart": "npm stop && npm start",
+    "dev": "pm2 start src/index.js --name $npm_package_config_daemon --watch",
+    "postdev": "npm run logs",
+    "restart-dev": "npm stop && npm run dev",
+    "prestop": "npm run flush",
+    "stop": "pm2 stop $npm_package_config_daemon ",
+    "poststop": "pm2 delete $npm_package_config_daemon && npm run save",
+    "save": "pm2 save --force",
+    "logs": "pm2 logs --name $npm_package_config_daemon",
+    "status": "pm2 status --name $npm_package_config_daemon",
+    "list": "pm2 list",
+    "flush": "pm2 flush $npm_package_config_daemon"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "dotenv": "^10.0.0",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.5.0"
