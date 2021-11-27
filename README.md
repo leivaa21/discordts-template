@@ -1,5 +1,5 @@
 # About
->
+
 > Free to use and modify but always mention the author [(@leivaa21)](https://github.com/leivaa21)!
 >
 > This is a template for a discord bot using discordJS and typescript. </br>
@@ -9,42 +9,39 @@
 > **Start your discord bot now**! </br>
 > Click on the `Use this template` button
 >
-> Drop a start if you like it! it doesnt requires you anything but its cool to have stars!</br>
-> ![star](https://github.blog/wp-content/uploads/2020/09/github-stars-logo_Color.png)
->
+> Drop a start if you like it! it doesnt requires you anything but its cool to have stars!</br> > ![star](https://github.blog/wp-content/uploads/2020/09/github-stars-logo_Color.png)
 
 ## Why using this template
->
+
 > The real question is, why you should bother and losing time with configs and all of that when you can simply use this and start implementing your bot now!
->
 
 ## What libraries this templates uses
->
+
 > If you're using this template, you should know that you're also using this libraries, they're all cool libraries, check them out!
 >
 > ### Utilities
 >
-> * **Discord.js** as main library of the repository
-> * **FS** to work with the filesystem
-> * **PM2** to keep the bot always up and restart on errors (Ideally this wont need to happen xd)
+> - **Discord.js** as main library of the repository
+> - **FS** to work with the filesystem
+> - **PM2** to keep the bot always up and restart on errors (Ideally this wont need to happen xd)
 >
 > ### Keeping it clean
 >
-> * **Prettier**
-> * **EsLint**
+> - **Prettier**
+> - **EsLint**
 >
 > > to mantain your code as clean as possible
 >
 > ### Keeping up w/ TDD
 >
-> * **Jest**
+> - **Jest**
 >
-> > *TDD* (Test driven development) is one of the good software developing pratice that this template aims for.
+> > _TDD_ (Test driven development) is one of the good software developing pratice that this template aims for.
 >
 > ### Others
 >
-> * **Typescript** because types are cool
-> * **dotenv** to hide the discord_token, you dont want **anyone** to know your bot token!!
+> - **Typescript** because types are cool
+> - **dotenv** to hide the discord_token, you dont want **anyone** to know your bot token!!
 
 ## Setting this up
 
@@ -60,11 +57,14 @@ Create a new bot for your aplication and set up the bot user.
 Save the bot token and paste it to your `.env` file in the root of your repository with the format: `discord_token=TOKEN HERE`
 ![BotMenu](https://i.imgur.com/QMS4QCs.png)
 
+Remember to active the intents here!!
+![intents](https://i.imgur.com/tHcMozd.png)
+
 Then we have to generate a URL to invite our bot to our server.
 Go to the `OAuth2` section, `URL Generator`;
 
-* In the scope section we have to select `bot`
-* At permissions select only the permissions that your bot needs to work, (`only select admin if your bot needs all the perms or just if you're too lazy`)
+- In the scope section we have to select `bot`
+- At permissions select only the permissions that your bot needs to work, (`only select admin if your bot needs all the perms or just if you're too lazy`)
 
 ![UrlGenerator](https://i.imgur.com/pz0B074.png)
 
