@@ -47,28 +47,28 @@
 
 Make an application on [discord developer portal](https://discord.com/developers/applications).
 
-Then go to your app and go to the "Bot" section.
+Then go to your app and go to the "Bot" section.</br>
 ![appMenuDiscord](https://i.imgur.com/KTBGVSk.png)
 
-Create a new bot for your aplication and set up the bot user.
+Create a new bot for your aplication and set up the bot user.</br>
 
 ![BuildABot](https://i.imgur.com/LRPCmzE.png)
 
-Save the bot token and paste it to your `.env` file in the root of your repository with the format: `discord_token=TOKEN HERE`
+Save the bot token and paste it to your `.env` file in the root of your repository with the format: `discord_token=TOKEN HERE`</br>
 ![BotMenu](https://i.imgur.com/QMS4QCs.png)
 
 Remember to active the intents here!!
 ![intents](https://i.imgur.com/tHcMozd.png)
 
 Then we have to generate a URL to invite our bot to our server.
-Go to the `OAuth2` section, `URL Generator`;
+Go to the `OAuth2` section, `URL Generator`;</br>
 
 - In the scope section we have to select `bot`
 - At permissions select only the permissions that your bot needs to work, (`only select admin if your bot needs all the perms or just if you're too lazy`)
 
 ![UrlGenerator](https://i.imgur.com/pz0B074.png)
 
-Then the URL will send us to a site like this where we can invite the bot to our server!
+Then the URL will send us to a site like this where we can invite the bot to our server!</br>
 ![AddToYourServer](https://i.imgur.com/GjTnrut.png)
 
 Just with this the app will be able to run and start working on your selected server!
