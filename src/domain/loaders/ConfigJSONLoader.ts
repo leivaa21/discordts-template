@@ -6,7 +6,7 @@ import { ConfigInterface } from '../interfaces/ConfigInterface';
 export class ConfigJSONLoader implements ConfigLoader {
   private readonly configPath: string = join(
     __dirname,
-    '../../config/config.json'
+    '../../../config/config.json'
   );
 
   public load(): ConfigInterface {
