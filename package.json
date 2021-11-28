@@ -4,13 +4,25 @@
   "description": "A discord bot template for typescript, start building as soon as possible!",
   "main": "build/index.js",
   "private": true,
+  "config": {
+    "daemon": "DiscordTS-Template"
+  },
   "scripts": {
     "build:dev": "tsc --watch",
     "prebuild": "rm -rf ./build",
     "build": "tsc",
-    "prestart": "npm run build",
-    "start": "node build/index",
-    "format": "eslint '*/**/*.{js,ts,tsx}' --fix && prettier --write ."
+    "format": "eslint '*/**/*.{js,ts,tsx}' --fix && prettier --write .",
+    "start": "pm2 start build/index.js --name $npm_package_config_daemon",
+    "poststart": "npm run logs",
+    "save": "pm2 save --force",
+    "restart": "npm stop && npm start",
+    "prestop": "npm run flush",
+    "stop": "pm2 stop $npm_package_config_daemon ",
+    "poststop": "pm2 delete $npm_package_config_daemon && npm run save",
+    "logs": "pm2 logs --name $npm_package_config_daemon",
+    "status": "pm2 status --name $npm_package_config_daemon",
+    "list": "pm2 list",
+    "flush": "pm2 flush $npm_package_config_daemon"
   },
   "repository": {
     "type": "git",
