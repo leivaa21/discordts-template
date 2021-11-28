@@ -1,9 +1,4 @@
-import {
-  Client,
-  ClientOptions,
-  Collection,
-  Intents
-} from 'discord.js';
+import { Client, ClientOptions, Collection, Intents } from 'discord.js';
 import { Command } from './interfaces/Command';
 import { Event } from './interfaces/Event';
 import CommandsLoader from './loaders/commandsLoader';
@@ -11,8 +6,6 @@ import EventsLoader from './loaders/eventsLoader';
 import { Logger } from './loggers/Logger';
 import { consoleLogger } from './loggers/consoleLogger';
 import { Config } from './config';
-
-
 
 const botOptions: ClientOptions = {
   intents: [
@@ -38,7 +31,7 @@ const botOptions: ClientOptions = {
   partials: ['USER', 'CHANNEL', 'GUILD_MEMBER', 'REACTION', 'MESSAGE'],
 };
 
-class Bot extends Client{
+class Bot extends Client {
   /**
    * Intents are what our bot can do, this template list all
    * the intents that discord api has, so remove what you're not using!
@@ -46,7 +39,6 @@ class Bot extends Client{
    * Look at the discord api to see what can do every intent.
    * @see https://discord.com/developers/docs/topics/gateway#list-of-intents
    */
-  
 
   /**
    * The client of our bot (Using Client class from discord.js)
@@ -60,8 +52,8 @@ class Bot extends Client{
   public commands: Collection<string, Command> = new Collection();
   public events: Collection<string, Event> = new Collection();
 
-  private commandLoader : CommandsLoader = new CommandsLoader(__dirname);
-  private eventLoader : EventsLoader = new EventsLoader(__dirname);
+  private commandLoader: CommandsLoader = new CommandsLoader(__dirname);
+  private eventLoader: EventsLoader = new EventsLoader(__dirname);
 
   /**
    * Public constructor of the bot,
@@ -74,28 +66,25 @@ class Bot extends Client{
    */
 
   public constructor(token: string, options?: ClientOptions) {
-    
     super(options != undefined ? options : botOptions);
     this.token = token;
     this.config = new Config();
   }
-  public async start(){
+  public async start() {
     await this.login(this.token);
     this.load();
   }
-  
-  private load(){
+
+  private load() {
     this.commandLoader.load(this);
-    if(this.commands.size != 0)
-      this.logger.success(`Loaded ${this.commands.size} commands!`)
-    else
-    this.logger.warning(`Loaded ${this.commands.size} commands!`)
+    if (this.commands.size != 0)
+      this.logger.success(`Loaded ${this.commands.size} commands!`);
+    else this.logger.warning(`Loaded ${this.commands.size} commands!`);
 
     this.eventLoader.load(this);
-    if(this.events.size != 0)
-    this.logger.success(`Loaded ${this.events.size} events!`)
-    else
-    this.logger.warning(`Loaded ${this.events.size} events!`)
+    if (this.events.size != 0)
+      this.logger.success(`Loaded ${this.events.size} events!`);
+    else this.logger.warning(`Loaded ${this.events.size} events!`);
   }
 }
-export {Bot};
+export { Bot };

@@ -1,4 +1,4 @@
-import {Bot} from './domain/bot';
+import { Bot } from './domain/bot';
 import 'dotenv/config';
 
 let discordBot: Bot;
