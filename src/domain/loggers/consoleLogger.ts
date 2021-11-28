@@ -1,8 +1,20 @@
 import { Logger } from './Logger';
-import { okMessage, errMessage } from '../format/messageFormatter';
+
+function okMessage(From: string, Message: string): string {
+  return `[\x1b[36m${new Date().toLocaleTimeString()}\x1b[0m][\x1b[32m${From}\x1b[0m] \x1b[37m${Message}\x1b[0m`;
+}
+function warnMessage(From: string, Message: string): string {
+  return `[\x1b[36m${new Date().toLocaleTimeString()}\x1b[0m][\x1b[33m${From}\x1b[0m] \x1b[37m${Message}\x1b[0m`;
+}
+function infoMessage(From: string, Message: string): string {
+  return `[\x1b[36m${new Date().toLocaleTimeString()}\x1b[0m][\x1b[34m${From}\x1b[0m] \x1b[37m${Message}\x1b[0m`;
+}
+function errMessage(From: string, Message: string): string {
+  return `[\x1b[36m${new Date().toLocaleTimeString()}\x1b[0m][\x1b[31m\x1b[1m${From}\x1b[0m] ${Message}\x1b[0m`;
+}
 
 export class consoleLogger implements Logger {
-  private static readonly successHolder: string = 'Bot';
+  private static readonly successHolder: string = 'OK';
   private static readonly errorHolder: string = 'ERROR';
   private static readonly warningHolder: string = 'WARN';
   private static readonly infoHolder: string = 'INFO';
@@ -11,12 +23,12 @@ export class consoleLogger implements Logger {
     console.log(okMessage(consoleLogger.successHolder, message));
   }
   warning(message: string): void {
-    console.log(okMessage(consoleLogger.warningHolder, message));
+    console.warn(warnMessage(consoleLogger.warningHolder, message));
   }
   info(message: string): void {
-    console.log(okMessage(consoleLogger.infoHolder, message));
+    console.info(infoMessage(consoleLogger.infoHolder, message));
   }
   error(message: string): void {
-    console.log(errMessage(consoleLogger.errorHolder, message));
+    console.error(errMessage(consoleLogger.errorHolder, message));
   }
 }
