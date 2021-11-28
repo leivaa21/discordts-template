@@ -6,7 +6,7 @@
 >
 > The template is build to be scalable and maintainable.
 >
-> Not implementing testing because there's no mocking library for discord.js (at the moment at least)
+> Not implementing testing because there's no mocking library for discord.js (*at the moment at least*)
 >
 > **Start your discord bot now**! </br>
 > Click on the `Use this template` button
