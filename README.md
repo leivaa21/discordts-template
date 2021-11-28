@@ -13,7 +13,7 @@
 > **Start your discord bot now**! </br>
 > Click on the `Use this template` button
 >
-> Drop a start if you like it! it doesnt requires you anything but its cool to have stars!</br> !
+> Drop a start if you like it! it doesnt requires you anything but its cool to have stars!</br>
 
 ## Why using this template
 
