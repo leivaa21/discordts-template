@@ -70,3 +70,11 @@ Then the URL will send us to a site like this where we can invite the bot to our
 ![AddToYourServer](https://i.imgur.com/GjTnrut.png)
 
 Just with this the app will be able to run and start working on your selected server!
+
+## Run it
+
+When everything is setted up, just run `npm install && npm run build && npm start`
+And the bot should show up like this in your console:</br>
+![cmd](https://i.imgur.com/mb0YM0N.png)
+
+And there you go! now you only has to implements your custom bot commands on `src/service/commands/` and your events in `src/services/events/`, follow the instructions from the readme's in both folders and start coding!
