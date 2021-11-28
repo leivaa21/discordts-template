@@ -4,7 +4,9 @@
 >
 > This is a template for a discord bot using discordJS and typescript. </br>
 >
-> The template is build to be scalable and maintainable, using TDD and clean architecture.
+> The template is build to be scalable and maintainable.
+>
+> Not implementing testing because there's no mocking library for discord.js (at the moment at least)
 >
 > **Start your discord bot now**! </br>
 > Click on the `Use this template` button
@@ -31,12 +33,6 @@
 > - **EsLint**
 >
 > > to mantain your code as clean as possible
->
-> ### Keeping up w/ TDD
->
-> - **Jest**
->
-> > _TDD_ (Test driven development) is one of the good software developing pratice that this template aims for.
 >
 > ### Others
 >
