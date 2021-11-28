@@ -1,4 +1,6 @@
-# About
+# STILL WORK IN PROGRESS
+
+## About
 
 > Free to use and modify but always mention the author [(@leivaa21)](https://github.com/leivaa21)!
 >
@@ -11,7 +13,7 @@
 > **Start your discord bot now**! </br>
 > Click on the `Use this template` button
 >
-> Drop a start if you like it! it doesnt requires you anything but its cool to have stars!</br> > ![star](https://github.blog/wp-content/uploads/2020/09/github-stars-logo_Color.png)
+> Drop a start if you like it! it doesnt requires you anything but its cool to have stars!</br> !
 
 ## Why using this template
 
