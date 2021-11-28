@@ -36,6 +36,7 @@
   "dependencies": {
     "discord.js": "^13.3.1",
     "fs": "^0.0.1-security",
-    "pm2": "^5.1.2"
+    "pm2": "^5.1.2",
+    "replace-json-property": "^1.8.0"
   }
 }
