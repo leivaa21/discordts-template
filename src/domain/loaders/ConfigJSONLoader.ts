@@ -1,5 +1,6 @@
 import { ConfigLoader } from '../interfaces/ConfigLoader';
 import fs from 'fs';
+import { replace } from 'replace-json-property';
 import { join } from 'path';
 import { ConfigInterface } from '../interfaces/ConfigInterface';
 export class ConfigJSONLoader implements ConfigLoader {
@@ -14,7 +15,7 @@ export class ConfigJSONLoader implements ConfigLoader {
     config = JSON.parse(jsonString) as ConfigInterface;
     return config;
   }
-  public update(): Promise<boolean> {
-    throw new Error('Method not implemented.');
+  public updateParam(param: string, value: string): Promise<boolean> {
+    return replace(this.configPath, param, value);
   }
 }

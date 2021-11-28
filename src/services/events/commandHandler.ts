@@ -27,5 +27,5 @@ export const execute: Execute = async (bot, message: Message) => {
     ? bot.commands.get(UserCommand)
     : undefined;
   if (!command) return;
-  command.execute(bot, message);
+  command.execute(bot, message, args);
 };

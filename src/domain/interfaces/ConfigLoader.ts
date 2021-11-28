@@ -2,5 +2,5 @@ import { ConfigInterface } from './ConfigInterface';
 
 export interface ConfigLoader {
   load(): ConfigInterface;
-  update(config: ConfigInterface): Promise<boolean>;
+  updateParam(param: string, value: string): Promise<boolean>;
 }

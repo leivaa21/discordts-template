@@ -88,5 +88,10 @@ class Bot extends Client {
       this.logger.success(`Loaded ${this.events.size} events!`);
     else this.logger.warning(`Loaded ${this.events.size} events!`);
   }
+
+  public updateConfig(param: string, value: string): void {
+    this.configLoader.updateParam(param, value);
+    this.config = this.configLoader.load();
+  }
 }
 export { Bot };
