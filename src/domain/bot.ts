@@ -72,9 +72,9 @@ class Bot extends Client {
     this.token = token;
     this.config = this.configLoader.load();
   }
-  public async start() {
-    await this.login(this.token ? this.token : '');
-    this.load();
+  public start() {   
+    this.login(this.token ? this.token : '');
+    this.load();    
   }
 
   private load() {
