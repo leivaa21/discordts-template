@@ -2,21 +2,21 @@ import { Logger } from './Logger';
 import { okMessage, errMessage } from '../format/messageFormatter';
 
 export class consoleLogger implements Logger {
-  private readonly successHolder: string = 'Bot';
-  private readonly errorHolder: string = 'ERROR';
-  private readonly warningHolder: string = 'WARN';
-  private readonly infoHolder: string = 'INFO';
+  private static readonly successHolder: string = 'Bot';
+  private static readonly errorHolder: string = 'ERROR';
+  private static readonly warningHolder: string = 'WARN';
+  private static readonly infoHolder: string = 'INFO';
 
   success(message: string): void {
-    console.log(okMessage(this.successHolder, message));
+    console.log(okMessage(consoleLogger.successHolder, message));
   }
   warning(message: string): void {
-    console.log(okMessage(this.warningHolder, message));
+    console.log(okMessage(consoleLogger.warningHolder, message));
   }
   info(message: string): void {
-    console.log(okMessage(this.infoHolder, message));
+    console.log(okMessage(consoleLogger.infoHolder, message));
   }
   error(message: string): void {
-    console.log(errMessage(this.errorHolder, message));
+    console.log(errMessage(consoleLogger.errorHolder, message));
   }
 }

@@ -1,11 +1,13 @@
 import { Client, ClientOptions, Collection, Intents } from 'discord.js';
 import { Command } from './interfaces/Command';
 import { Event } from './interfaces/Event';
-import CommandsLoader from './loaders/commandsLoader';
-import EventsLoader from './loaders/eventsLoader';
+import { ConfigLoader } from './interfaces/ConfigLoader';
+import CommandsLoader from './loaders/CommandsLoader';
+import EventsLoader from './loaders/EventsLoader';
 import { Logger } from './loggers/Logger';
+import { ConfigJSONLoader } from './loaders/ConfigJSONLoader';
 import { consoleLogger } from './loggers/consoleLogger';
-import { Config } from './config';
+import { ConfigInterface } from './interfaces/ConfigInterface';
 
 const botOptions: ClientOptions = {
   intents: [
@@ -44,8 +46,8 @@ class Bot extends Client {
    * The client of our bot (Using Client class from discord.js)
    */
   public readonly unknown: string = 'Unkown-Bot';
-  public readonly token: string;
-  public config: Config;
+  public config = {} as ConfigInterface;
+  private readonly configLoader: ConfigLoader = new ConfigJSONLoader();
 
   public readonly logger: Logger = new consoleLogger();
 
@@ -68,10 +70,10 @@ class Bot extends Client {
   public constructor(token: string, options?: ClientOptions) {
     super(options != undefined ? options : botOptions);
     this.token = token;
-    this.config = new Config();
+    this.config = this.configLoader.load();
   }
   public async start() {
-    await this.login(this.token);
+    await this.login(this.token ? this.token : '');
     this.load();
   }
 
